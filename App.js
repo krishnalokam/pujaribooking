@@ -22,7 +22,6 @@ const App: React.FC<AppProps> = ({onLanguageChange}) => {
       try {
         const savedLanguage = await AsyncStorage.getItem('selectedLanguage');
         const user = await AsyncStorage.getItem('auth-user');
-        console.log(user)
         if (user) {
           const userr = JSON.parse(user);
           const userType = Number(userr?.user_type);
