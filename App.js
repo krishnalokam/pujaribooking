@@ -17,12 +17,12 @@ const App: React.FC<AppProps> = ({onLanguageChange}) => {
   const [initialRoute, setInitialRoute] = useState('Choice');
   const [active, setActive] = useState(false);
   const [loading, setLoading] = useState(true);
-  useEffect(() => {
+  useEffect(() => { 
     const fetchLanguageAndUser = async () => {
       try {
         const savedLanguage = await AsyncStorage.getItem('selectedLanguage');
         const user = await AsyncStorage.getItem('auth-user');
-
+        console.log(user)
         if (user) {
           const userr = JSON.parse(user);
           const userType = Number(userr?.user_type);
